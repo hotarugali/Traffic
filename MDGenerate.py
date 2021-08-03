@@ -7,7 +7,7 @@ IMAGE = ['.png', '.jpg', '.jpeg']
 def MDGenerate(dir):
     file = os.path.basename(dir) + ".md"
     content = ""
-    for i in os.listdir(dir):
+    for i in sorted(os.listdir(dir), key=lambda x:x[::-1], reverse=True):
         subdir = os.path.join(dir, i)
         if os.path.isdir(subdir):
             content += "## {}\n".format(i)
