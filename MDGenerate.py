@@ -39,7 +39,7 @@ def MDGenerate(dir):
                             for col in range(cols):
                                 index = row*cols + col
                                 if index < cnt:
-                                    html.td().p(align="center", style="width: 150px").b(_t=items[index]['text'])
+                                    html.td().p(align="center", style="width: 150px;").b(_t=items[index]['text'])
 
             content += str(html) + "\n\n"
 
