@@ -2,7 +2,7 @@ import os
 import sys
 from airium import Airium
 
-IMAGE = ['.png', '.jpg', '.jpeg']
+IMAGE = ['.png', '.jpg', 'jpeg', '.gif', '.webp']
 
 def MDGenerate(dir):
     file = os.path.basename(dir) + ".md"
@@ -17,7 +17,7 @@ def MDGenerate(dir):
                 name = ".".join(os.path.splitext(j)[:-1])
                 url = os.path.join(cdn, os.path.normpath(os.path.join(subdir, j)))
                 suffix = os.path.splitext(j)[-1]
-                if suffix in IMAGE:
+                if suffix.lower() in IMAGE:
                     items.append({ 'text':name, 'image':url })
             # generate html
             cnt = len(items)
