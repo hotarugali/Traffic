@@ -26,20 +26,20 @@ def MDGenerate(dir):
             html = Airium()
             with html.table(border='2'):
                 for row in range(rows):
-                    with html.tr().td(align='center').table(border='1'):
+                    with html.tr().td().table(border='1'):
                         # image
                         with html.tr():
                             for col in range(cols):
                                 index = row*cols + col
                                 if index < cnt:
-                                    html.td().img(src=items[index]['image'], height="150", width="150", align="center")
+                                    html.td(align='center').img(src=items[index]['image'], height="150", width="150")
 
                         # text
                         with html.tr():
                             for col in range(cols):
                                 index = row*cols + col
                                 if index < cnt:
-                                    html.td().p(align="center", style="width: 150px;").b(_t=items[index]['text'])
+                                    html.td(align='center').p(style="width: 150px;").b(_t=items[index]['text'])
 
             content += str(html) + "\n\n"
 
